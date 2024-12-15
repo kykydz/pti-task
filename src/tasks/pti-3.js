@@ -32,42 +32,54 @@ const tableData = [
 
 const PTI3 = () => {
   return (
-    <center>
-      <h1>TRANSKIP NILAI PRAKTIKUM</h1>
-      <b>Nama : Rizky H Saputra</b> <br />
-      <b>NIM : 232053001</b> <br />
-      <p style={{ textAlign: 'right' }}>
-        Tanggal: 10/12/2023 <br />
-        Jurusan : Informatika <br />
-        Semester : 1 <br />
-      </p>
-      <table>
-        <tr>
-          <td colspan="2">No.</td>
-          <td>Mata Kuliah</td>
-          <td>Jumlah Hadir</td>
-          <td>Nilai Tugas</td>
-          <td>Pra-Responsi</td>
-          <td>Responsi</td>
-          <td>Nilai Akhir</td>
-        </tr>
-        {tableData.map((data) => (
-          <tr>
-            <td colspan="2">{data.no}</td>
-            <td>{data.mataKuliah}</td>
-            <td>{data.jumlahHadir}</td>
-            <td>{data.nilaiTugas}</td>
-            <td>{data.praResponsi}</td>
-            <td>{data.responsi}</td>
-            <td>{data.nilaiAkhir}</td>
-          </tr>
-        ))}
-        <tr>
-          <td colspan="7">Rata-rata</td>
-          <td>{calculateAverage(tableData)}</td>
-        </tr>
-      </table>
-    </center>
+    <div className="container">
+      <div className="text-center mt-5">
+        <h1>TRANSKIP NILAI PRAKTIKUM</h1>
+        <p>
+          <strong>Nama :</strong> Rizky H Saputra <br />
+          <strong>NIM :</strong> 232053001
+        </p>
+        <p className="text-end">
+          <strong>Tanggal:</strong> 10/12/2023 <br />
+          <strong>Jurusan :</strong> Informatika <br />
+          <strong>Semester :</strong> 1
+        </p>
+        <table className="table table-bordered mt-4">
+          <thead className="table-dark">
+            <tr>
+              <th scope="col" colSpan="2">
+                No.
+              </th>
+              <th scope="col">Mata Kuliah</th>
+              <th scope="col">Jumlah Hadir</th>
+              <th scope="col">Nilai Tugas</th>
+              <th scope="col">Pra-Responsi</th>
+              <th scope="col">Responsi</th>
+              <th scope="col">Nilai Akhir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((data) => (
+              <tr key={data.no}>
+                <td colSpan="2">{data.no}</td>
+                <td>{data.mataKuliah}</td>
+                <td>{data.jumlahHadir}</td>
+                <td>{data.nilaiTugas}</td>
+                <td>{data.praResponsi}</td>
+                <td>{data.responsi}</td>
+                <td>{data.nilaiAkhir}</td>
+              </tr>
+            ))}
+            <tr>
+              <td colSpan="7" className="text-end">
+                <strong>Rata-rata</strong>
+              </td>
+              <td>{calculateAverage(tableData)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 
