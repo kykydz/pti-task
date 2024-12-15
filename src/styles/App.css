@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.App-body {
+  background-color: #1f4d50;
+}
+
+.App-section {
+  height: 20vh;
+}
+
+.App-task {
+  height: '100%';
+  display: 'flex';
+  flexDirection: 'column';
+}
